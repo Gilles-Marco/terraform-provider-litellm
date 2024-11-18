@@ -3,10 +3,10 @@ HOSTNAME=registry.terraform.io
 NAMESPACE=gzamboni
 NAME=litellm
 BINARY=terraform-provider-${NAME}
-VERSION=$(shell svu current)
-NEXT_VERSION=$(shell svu next)
-GOOS=darwin
-GOARCH=arm64
+VERSION=$(shell svu --strip-prefix current)
+NEXT_VERSION=$(shell svu --strip-prefix next)
+GOOS=linux
+GOARCH=amd64
 OS_ARCH=${GOOS}_${GOARCH}
 TERRAFORM_PLUGINS=~/.terraform.d/plugins
 
