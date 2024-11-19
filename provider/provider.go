@@ -118,6 +118,9 @@ func NewProvider() *schema.Provider {
 			"litellm_team":            resourceTeam(),
 			"litellm_team_membership": resourceTeamMembership(),
 		},
+		DataSourcesMap: map[string]*schema.Resource{
+			"litellm_model": datasourceModel(),
+		},
 		ConfigureContextFunc: providerConfigure,
 	}
 }
